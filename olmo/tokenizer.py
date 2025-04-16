@@ -180,7 +180,7 @@ class Tokenizer:
         if truncate_to is not None and add_special_tokens:
             truncate_to -= self.num_special_tokens_to_add(False)
 
-        batch_encoding = self.base_tokenizer.encode_batch(inputs)
+        batch_encoding = self.base_tokenizer.encode_batch(inputs, add_special_tokens=False)
 
         all_input_ids = []
         for encoding in batch_encoding:
